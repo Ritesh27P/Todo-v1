@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1> <%= listTitle %></h1>
+    </div> 
+    
+    <div class="box">
+            <% for(let item of newListItems){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%= item %> </p>
+                    <!-- <hr> -->
+                </div>
+
+            <% } %>
+
+        <form action="/" method="post" class="item">
+            <!-- <label for="todo_ip">Enter todo things</label> -->
+            <input id="todo_ip" type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
