@@ -7,11 +7,10 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/public'))
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let work_items = ["Take Coffe"]
+let items = [];
+let work_items = []
 
 app.get('/', (req, res) =>{
-    
     const day = date.getDate();
     
     res.render('list.ejs', {listTitle: day, newListItems: items, list_no: items.length})
