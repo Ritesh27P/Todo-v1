@@ -13,12 +13,17 @@
     </div> 
     
     <div class="box">
+
+
             <% for(let item of newListItems){ %>
-                <div class="item">
-                    <input type="checkbox">
-                    <p><%= item %> </p>
-                    <!-- <hr> -->
-                </div>
+
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input name="itemDone" value="<%= item._id %>" type="checkbox" onchange="this.form.submit()">
+                        <p><%= item.name %> </p>
+                        <!-- <hr> -->
+                    </div>
+                </form>
 
             <% } %>
 
@@ -28,6 +33,10 @@
             <button type="submit" name="list" value="<%= listTitle %>">+</button>
         </form>
     </div>
+
+<footer>
+    <h5>Copyright 2022 The Ritesh Pachangane</h5>
+</footer>
 
 
 </body>
